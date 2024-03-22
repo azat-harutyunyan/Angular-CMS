@@ -7,6 +7,7 @@ import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, withPreloading, PreloadAllModules, withDebugTracing } from '@angular/router';
 import { APP_ROUTES } from './app/app.routes';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -15,7 +16,8 @@ bootstrapApplication(AppComponent, {
         BrowserModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        AngularFirestore
       ),
     provideRouter(APP_ROUTES, withPreloading(PreloadAllModules))
   ]

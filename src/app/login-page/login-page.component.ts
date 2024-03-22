@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AfService } from '../providers/af.service';
 import { CommonModule } from '@angular/common';
+import { User } from '../providers/user';
 
 @Component({
   selector: 'app-login-page',
@@ -10,8 +11,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login-page.component.css'
 })
 export class LoginPageComponent {
-  constructor(public afService: AfService) {
+  user: User;
 
+  constructor(public afService: AfService) {
+    this.afService.user$.subscribe(user => this.user = user)
   }
 
   login() {
