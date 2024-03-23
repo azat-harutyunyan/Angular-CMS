@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AfService } from '../providers/af.service';
 import { CommonModule } from '@angular/common';
 import { User } from '../providers/user';
@@ -10,13 +10,16 @@ import { User } from '../providers/user';
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
   user: User;
 
   constructor(public afService: AfService) {
-    this.afService.user$.subscribe(user => this.user = user)
   }
 
+  ngOnInit() {
+    this.afService.user$.subscribe(user => this.user = user)
+  }
+  
   login() {
     this.afService.loginWithGoogle()
   }
