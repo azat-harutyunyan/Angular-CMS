@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { RouterModule } from '@angular/router';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
-
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   standalone: true,
-  imports: [PagesListComponent, RouterModule, AppNavbarComponent],
+  imports: [PagesListComponent, RouterModule, AppNavbarComponent, MatButtonModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
