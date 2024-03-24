@@ -1,0 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.profileImg {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+}
+.btn {
+    display: flex;
+    align-items: center;
+}
