@@ -1,26 +1,20 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
+
     <button mat-button routerLink="/">Angular CMS</button>
 
     <span class="example-spacer"></span>
-
-    <button mat-button routerLink="/article">Article</button>
-    <button mat-button routerLink="/admin">Admin</button>
 
     <div *ngIf="!user">
       <button mat-button (click)="afService.loginWithGoogle()">Login</button>
     </div>
 
     <div *ngIf="user">
-      <button
-        mat-button
-        [matMenuTriggerFor]="menu"
-      >
-      <div class="btn">
-        <span>Hello {{ user.displayName }}</span>
-        <img class="profileImg" [src]="user.photoURL" alt="" />
-      </div>
-
+      <button mat-button [matMenuTriggerFor]="menu">
+        <div class="btn">
+          <span>Hello {{ user.displayName }}</span>
+          <img class="profileImg" [src]="user.photoURL" alt="" />
+        </div>
       </button>
       <mat-menu
         #menu="matMenu"

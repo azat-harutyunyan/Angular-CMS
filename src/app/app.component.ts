@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { RouterModule } from '@angular/router';
-import { AppNavbarComponent } from './app-navbar/app-navbar.component';
+import { AppNavbarComponent } from './admin-page/app-navbar/app-navbar.component';
 import { MatButtonModule } from '@angular/material/button';
 @Component({
   standalone: true,
