@@ -4,7 +4,7 @@
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <mat-nav-list>
       <mat-list-item *ngFor="let link of links">
-        <a routerLink="/admin/{{ link.link }}">{{ link.name }}</a>
+        <span routerLink="/admin/{{ link.link }}">{{ link.name }}</span>
       </mat-list-item>
     </mat-nav-list>
   </mat-drawer>

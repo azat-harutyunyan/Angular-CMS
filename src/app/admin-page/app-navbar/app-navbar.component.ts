@@ -22,6 +22,8 @@ export class AppNavbarComponent {
   }
 
   ngOnInit() {
-    this.afService.user$.subscribe(user => this.user = user)
+    this.afService.user$.subscribe(user => {
+      this.user = user
+    })
   }
 }
