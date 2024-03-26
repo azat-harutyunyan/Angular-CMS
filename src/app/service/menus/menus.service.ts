@@ -34,11 +34,11 @@ export class MenusService {
     this.afs.collection("menus").add(menu)
   }
 
-  deleteMenu(menuId: number) {
+  deleteMenu(menuId: string) {
     this.afs.doc('menus/' + menuId).delete()
   }
 
-  updateMenu(menuId: number, menu: Menu) {
+  updateMenu(menuId: string, menu: Menu) {
     this.afs.doc('menus/' + menuId).update(menu)
   }
 }
