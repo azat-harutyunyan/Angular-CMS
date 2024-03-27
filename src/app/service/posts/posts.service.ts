@@ -4,19 +4,20 @@ import { map } from 'rxjs';
 
 export interface Post {
   title: string,
-  url: string
+  menu_id: string,
+  content: string,
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class MenusService {
+export class PostsService {
 
   constructor(private afs: AngularFirestore) {
 
   }
 
-  getMenus() {
+  getPosts() {
     return this.afs.collection("posts").snapshotChanges()
       .pipe(
         map(post => {
@@ -30,15 +31,15 @@ export class MenusService {
 
   }
 
-  addMenu(post: Post) {
+  addPost(post: Post) {
     this.afs.collection("posts").add(post)
   }
 
-  deleteMenu(postId: number) {
+  deletePost(postId: string) {
     this.afs.doc('posts/' + postId).delete()
   }
 
-  updateMenu(postId: number, post: Post) {
+  updatePost(postId: string, post: Post) {
     this.afs.doc('posts/' + postId).update(post)
   }
 }

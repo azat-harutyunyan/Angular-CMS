@@ -23,12 +23,12 @@ export class MenusComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  dataSource = new MatTableDataSource()
-  displayedColumns = ["id", "title", "url", "actions"]
   menuDetails: Menu = {
     title: "",
     url: "",
   }
+  displayedColumns = ["id", "title", "url", "actions"]
+  dataSource = new MatTableDataSource()
 
   constructor(private menusService: MenusService, public dialog: MatDialog) {
 
@@ -85,7 +85,6 @@ export class MenusComponent implements OnInit, AfterViewInit {
       if (result) {
         console.log('The Edit dialog was closed ');
         this.editMenu(menuId, result)
-        // this.editMenu(menuId)
       }
     });
   }

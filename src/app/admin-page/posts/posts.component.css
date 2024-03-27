@@ -1,0 +1,13 @@
+.mat-elevation-z8 {
+  padding: 10px;
+}
+
+.filter {
+  width: 100%;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
