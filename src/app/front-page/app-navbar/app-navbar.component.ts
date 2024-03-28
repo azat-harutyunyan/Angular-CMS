@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButton } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MenusService } from '../../service/menus/menus.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,11 +18,15 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class AppNavbarComponent {
   user: User;
+  menusList: any
 
-  constructor(public afService: AfService) {
+  constructor(public afService: AfService, private menusService: MenusService) {
   }
 
   ngOnInit() {
     this.afService.user$.subscribe(user => this.user = user)
+    this.menusService.getMenus().subscribe(menus => {
+      this.menusList = menus
+    })
   }
 }

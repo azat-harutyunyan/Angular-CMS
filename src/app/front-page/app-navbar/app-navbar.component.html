@@ -4,23 +4,22 @@
 
     <span class="example-spacer"></span>
 
+    <div *ngFor="let menu of menusList">
+      <button mat-button routerLink="/pages/{{ menu.url }}">{{ menu.title }}</button>
+    </div>
+
     <button mat-button routerLink="/article">Article</button>
-    <button mat-button routerLink="/admin">Admin</button>
 
     <div *ngIf="!user">
       <button mat-button (click)="afService.loginWithGoogle()">Login</button>
     </div>
 
     <div *ngIf="user">
-      <button
-        mat-button
-        [matMenuTriggerFor]="menu"
-      >
-      <div class="btn">
-        <span>Hello {{ user.displayName }}</span>
-        <img class="profileImg" [src]="user.photoURL" alt="" />
-      </div>
-
+      <button mat-button [matMenuTriggerFor]="menu">
+        <div class="btn">
+          <span>Hello {{ user.displayName }}</span>
+          <img class="profileImg" [src]="user.photoURL" alt="" />
+        </div>
       </button>
       <mat-menu
         #menu="matMenu"

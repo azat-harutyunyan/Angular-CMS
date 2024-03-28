@@ -22,13 +22,7 @@ export const ADMIN_ROUTES: Routes = [
 				component: PostsComponent
 			},
 			{
-				path: '',
-				pathMatch: "full",
-				redirectTo: "dashboard"
-			},
-			{
 				path: '**',
-				pathMatch: "full",
 				redirectTo: "dashboard"
 			}
 		]
