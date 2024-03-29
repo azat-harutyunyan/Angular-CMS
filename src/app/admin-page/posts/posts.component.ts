@@ -13,12 +13,12 @@ import { ConfirmationDialogComponent } from '../shared/confirmation-dialog/confi
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MenusService } from '../../service/menus/menus.service';
-import { JsonPipe } from '@angular/common';
+import { JsonPipe, SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'app-posts',
   standalone: true,
-  imports: [MatTableModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatSortModule, MatPaginatorModule, MatIconModule, MatSelectModule, ReactiveFormsModule, JsonPipe],
+  imports: [MatTableModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatSortModule, MatPaginatorModule, MatIconModule, MatSelectModule, ReactiveFormsModule, JsonPipe, SlicePipe],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.css'
 })
