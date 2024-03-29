@@ -11,7 +11,7 @@ export const FRONT_ROUTES: Routes = [
 		component: FrontPageComponent,
 		children: [
 			{
-				path: "home",
+				path: "",
 				component: HomePageComponent
 			},
 			{
